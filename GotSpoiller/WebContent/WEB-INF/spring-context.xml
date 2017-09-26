@@ -21,7 +21,7 @@
 	</bean>
 	<mvc:interceptors>
  		<bean class="mvc.controller.AutorizadorInterceptor" />
-	</mvc:interceptors>
-	<mvc:resources mapping="/resources/**" location="/resources/"/>
+	</mvc:interceptors>	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 </beans>
 	
