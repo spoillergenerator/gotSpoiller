@@ -9,7 +9,7 @@
 
 <!--<spring:url value="/resources/style.css" var="mainCss"/>
 <link href="${mainCss}" rel="stylesheet"/>-->
-<spring:url value="/resources/index.js" var="mainJs"/>
+
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -20,7 +20,7 @@
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   
-<link href='<c:url value="/resources/style.css" />' rel="stylesheet"/>
+<link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 <script src = "${mainJs}"></script>
 
 

@@ -22,6 +22,7 @@
 	<mvc:interceptors>
  		<bean class="mvc.controller.AutorizadorInterceptor" />
 	</mvc:interceptors>	
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**" location="/resources/"
+	cache-period="31556926"/>
 </beans>
 	
