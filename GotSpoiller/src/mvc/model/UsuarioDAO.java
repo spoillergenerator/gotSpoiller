@@ -41,6 +41,7 @@ public class UsuarioDAO {
 
 	public boolean existeUsuario(Usuario usuario) {
 		boolean existe = false;
+		System.out.println(usuario.getSenha());
 		try {
 			PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(*) FROM usuario WHERE login=? AND senha=? LIMIT 1");
 			stmt.setString(1, usuario.getLogin());

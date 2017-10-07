@@ -65,7 +65,7 @@
                   <div class="input full">
                     <label class="string optional" for="user-name">Email*</label>
                     <input class="string optional" maxlength="255"
-											id="user-email" placeholder="Email" type="email" size="50"
+											id="user-email" placeholder="Email" size="50"
 											name="login" //>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="simform__actions">
                   Foto de perfil: <input type="file" name="foto" /> <br />
-                  <input class="sumbit" name="commit" type="sumbit"
+                  <input class="sumbit" name="commit" type="submit"
 										value="Create Account" />
                   <span class="simform__actions-sidetext">By creating an account you agree to our <a
 										class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>
@@ -122,7 +122,7 @@
                   <div class="input full">
                     <label class="string optional" for="user-name">Email*</label>
                     <input class="string optional" maxlength="255"
-											id="user-email" placeholder="Email" type="email" size="50"
+											id="user-email" placeholder="Email" size="50"
 											name="login" />
                   </div>
                 </div>
@@ -136,7 +136,7 @@
                   </div>
                 </div>
                 <div class="simform__actions">
-                  <input class="sumbit" name="commit" type="sumbit"
+                  <input class="sumbit" name="commit" type="submit"
 										value="Log In" />
                   <span class="simform__actions-sidetext"><a
 										class="special" role="link" href="#">Forgot your password?<br>Click here</a></span>

@@ -20,7 +20,7 @@
 	<classpathentry kind="lib" path="externalJars/java-json.jar"/>
 	<classpathentry kind="lib" path="externalJars/jsp-api.jar"/>
 	<classpathentry kind="lib" path="externalJars/maven-core-3.5.0.jar"/>
-	<classpathentry kind="lib" path="externalJars/mysql-connector-java-5.1.43-bin.jar"/>
 	<classpathentry kind="lib" path="externalJars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="externalJars/mysql-connector-java-5.1.44-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

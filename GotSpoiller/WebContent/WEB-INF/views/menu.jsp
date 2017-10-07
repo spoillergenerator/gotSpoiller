@@ -11,6 +11,6 @@
 	<p>Bem vindo, ${usuarioLogado}</p>
 	<a href="listaTarefas">Clique aqui</a> para acessar a lista de tarefas
 	<a href="logout">Sair do sistema</a>
-
+	<img src="getImage?login=${usuarioLogado}" />
 </body>
 </html>
