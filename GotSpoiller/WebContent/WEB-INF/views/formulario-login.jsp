@@ -20,8 +20,8 @@
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   
-<style><%@includefile="/resources/style.css"%></style>
-<script><%@includefile="/resources/index.js"%></script>
+<style><%@includefile="/resources/css/style.css"%></style>
+<script><%@includefile="/resources/js/index.js"%></script>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
