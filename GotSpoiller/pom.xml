@@ -44,5 +44,11 @@
   		<artifactId>commons-fileupload</artifactId>
   		<version>1.2.2</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.twilio.sdk</groupId>
+  		<artifactId>twilio</artifactId>
+  		<version>7.11.0</version>
+  		<classifier>jar-with-dependencies</classifier>
+  	</dependency>
 	</dependencies>
 </project>
