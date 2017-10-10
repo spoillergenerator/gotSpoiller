@@ -17,6 +17,12 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		if (request.getSession().getAttribute("usuarioLogado") != null) {
 			return true;
 		}
+		if (uri.endsWith("fbloginvazio")){
+			return true;
+		}
+		if (uri.endsWith("fblogin")){
+			return true;
+		}
 		response.sendRedirect("loginForm");
 		return false;
 	}

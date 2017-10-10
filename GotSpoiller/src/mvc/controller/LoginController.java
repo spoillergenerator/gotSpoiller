@@ -37,11 +37,11 @@ public class LoginController {
 	 private static final String NETWORK_NAME = "Facebook";
 	 private static final String PROTECTED_RESOURCE_URL = "https://graph.facebook.com/v2.8/me";
 	
-	@RequestMapping("registro")
-	public String registro() {
-		return "formulario-registro";
-	}
-
+//	@RequestMapping("/")
+//	public String inicial() {
+//		return "formulario-login";
+//	}
+	
 	@RequestMapping(value = "efetuaRegistro", method = RequestMethod.POST)
 	public String upload(Usuario usuario) throws IOException {
 		UsuarioDAO dao = new UsuarioDAO();
@@ -79,9 +79,9 @@ public class LoginController {
 		response.getOutputStream().close();
 	}
 	
-	@RequestMapping(value = "fbloginvazio")
-	public static void fbLogin2() throws IOException, InterruptedException, ExecutionException {
-		System.out.println("nada bom");
+	@RequestMapping(value = "fbloginvazio", method = RequestMethod.POST)
+	public static void fbLogin2(HttpServletRequest session){
+		System.out.println("olo");
 	}
 	
 	@RequestMapping(value = "fblogin")
