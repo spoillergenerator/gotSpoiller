@@ -52,23 +52,24 @@
 			</div>
 		</div>
 		<div class="col s8 m8 l8 blue-grey darken-1">
+			<form action="mandar">
 		<span class="blue-grey-text text-lighten-5"><h4>Seja bem vindo ao Got Spoiller Generator. Aqui você pode acabar com a vida de seus amigos com apenas um clique. Basta dizer até qual temporada
 			 de Game of Thrones ele viu, que enviaremos um spoiller das tempordas seguintes. Use sem moderação.</h4></span>
 				<div class="row">
-					<form class="col s12">
+					<div class="col s12">
 						<div class="row">
 							<div class="input-field col s6">
 								<i class="material-icons prefix">account_circle</i> <input
-									id="icon_prefix" type="text" class="validate"> <label
+									id="icon_prefix" name="nome" type="text" class="validate"> <label
 									for="icon_prefix">Nome do amiguinho que vai se fuder</label>
 							</div>
 							<div class="input-field col s6">
 								<i class="material-icons prefix">phone</i> <input
-									id="icon_telephone" type="tel" class="validate"> <label
+									id="icon_telephone" name="numero" type="tel" class="validate"> <label
 									for="icon_telephone">numero dele</label>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 
 
@@ -85,7 +86,7 @@
 						<option value="3">7</option>
 					</select> <label>Temporada</label>
 				</div>
-			<form action="mandar">
+			
 			<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" type="submit"
 				name="action">Acabe com sua amizade :)<i class="material-icons right">send</i>
 			</button>
