@@ -21,6 +21,7 @@
 		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script><%@includefile="/resources/js/materialize.min.js"%></script>
 	<script><%@includefile="/resources/js/menu.js"%></script>
+	
 	<nav>
 	<div class="blue-grey darken-4 nav-wrapper">
 		<a href="#" class="blue-grey-text text-lighten-4 brand-logo center">GOT Spoiller</a>
@@ -84,9 +85,11 @@
 						<option value="3">7</option>
 					</select> <label>Temporada</label>
 				</div>
+			<form action="mandar">
 			<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" type="submit"
 				name="action">Acabe com sua amizade :)<i class="material-icons right">send</i>
 			</button>
+			</form>
 			<div class="row"></div>
 		</div>
 	</div>
