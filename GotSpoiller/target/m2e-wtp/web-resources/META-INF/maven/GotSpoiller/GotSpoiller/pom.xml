@@ -29,26 +29,31 @@
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-webmvc</artifactId>
-		    <version>4.3.3.RELEASE</version>
-		</dependency>	
-  	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-	<dependency>
-	    <groupId>commons-io</groupId>
-	    <artifactId>commons-io</artifactId>
-	    <version>2.4</version>
-	</dependency>
-  	<dependency>
-  		<groupId>commons-fileupload</groupId>
-  		<artifactId>commons-fileupload</artifactId>
-  		<version>1.2.2</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.twilio.sdk</groupId>
-  		<artifactId>twilio</artifactId>
-  		<version>7.11.0</version>
-  		<classifier>jar-with-dependencies</classifier>
-  	</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.3.3.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>7.11.0</version>
+			<classifier>jar-with-dependencies</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.github.scribejava</groupId>
+			<artifactId>scribejava-apis</artifactId>
+			<version>4.2.0</version>
+		</dependency>
 	</dependencies>
 </project>
