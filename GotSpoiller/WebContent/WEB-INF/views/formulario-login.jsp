@@ -143,6 +143,7 @@
                 </div>
               </form>
             </div>
+            <form accept-charset="utf-8" action="fbloginvazio">
             <div class="logmod__alter">
               <div class="logmod__alter-container">
                 <a href="#" class="connect facebook">
@@ -150,11 +151,14 @@
                     <i class="fa fa-facebook"></i>
                   </div>
                   <div class="connect__context">
+                   <input class="sumbit" name="commit" type="submit"
+										value="Log In" />
                     <span>Sign in with <strong>Facebook</strong></span>
                   </div>
                 </a>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>
