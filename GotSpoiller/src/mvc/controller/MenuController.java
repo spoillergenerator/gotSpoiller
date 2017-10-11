@@ -18,10 +18,12 @@ import mvc.model.MandadorSMSal;
 public class MenuController {
 
 	@RequestMapping("mandar")
-	public void manda(String nome, String numero) {
+	public String manda(String nome, String numero, String temp) {
 		
-		MandadorSMSal.mandar(nome, numero);
-		System.out.println("CHEGOU AQUI NO MANDAR PORRA CARALHO MERDA PQP");
+		MandadorSMSal.mandar(nome, numero, temp);
+		//System.out.println(temp);
+		
+		return "redirect:efetuaLogin";
 	}
 	
 }
