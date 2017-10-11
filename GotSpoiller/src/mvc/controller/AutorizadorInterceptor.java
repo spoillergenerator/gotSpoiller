@@ -23,6 +23,9 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		if (uri.endsWith("fblogin")){
 			return true;
 		}
+		if (uri.endsWith("callback")){
+			return true;
+		}
 		response.sendRedirect("loginForm");
 		return false;
 	}

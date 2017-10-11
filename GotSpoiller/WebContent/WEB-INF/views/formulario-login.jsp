@@ -153,8 +153,6 @@
 								<button type="submit" class="connect facebook">
 								  <i class="fa fa-facebook"></i> Sign in with <strong>Facebook</strong>
 								</button>
-								<!--<input name='texto'>
-								<input type='submit'>-->
 							</form>
 							</div>
 						</div>
