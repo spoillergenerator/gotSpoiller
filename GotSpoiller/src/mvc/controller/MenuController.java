@@ -31,15 +31,16 @@ import mvc.model.UsuarioDAO;
 public class MenuController {
 
 	@RequestMapping("mandar")
-	public String manda(String login, String nome, String numero, String temp) {
+	public String manda(String spoiler, String login, String nome, String numero, String temp) {
 		Mensagem mensagem = new Mensagem();
-		System.out.println("login: " + login);
+		System.out.println("login: " + spoiler);
 		mensagem.setUserName(login);
 		mensagem.setNome(nome);
 		mensagem.setNumero_recebido(numero);
 		mensagem.setTemp(temp);
-		mensagem.setTexto(mensagem.getSpoillers(temp));
-		MandadorSMSal.send(mensagem);
+		mensagem.setTexto(spoiler);
+		System.out.print("texto: " + spoiler);
+//		MandadorSMSal.send(mensagem);
 		//System.out.println(temp);
 		
 		return "redirect:efetuaLogin";
@@ -56,6 +57,7 @@ public class MenuController {
 			java.util.List<Mensagem> history = dao.getHistory(userJson.toString());
 			System.out.println(history);
 			responseJson.put("history", history);
+			response.setCharacterEncoding("UTF-8");
 			response.getWriter().println(responseJson);
 			
 
@@ -77,12 +79,11 @@ public class MenuController {
 			JSONObject responseJson = new JSONObject();
 			JSONObject json = new JSONObject(output);
 			Object tempJson = json.get("temp");
+			System.out.println(json.toString());
 			java.util.List<Spoiler> spoilers = dao.getSpoilers(tempJson.toString());
-			System.out.println(spoilers);
 			responseJson.put("spoilers", spoilers);
+			response.setCharacterEncoding("UTF-8");
 			response.getWriter().println(responseJson);
-			
-
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -92,26 +93,5 @@ public class MenuController {
 		}
 
 	}
-//	
-//	@RequestMapping("setSpoillersOption")
-//	@ResponseBody
-//	public void showSpoillers(@RequestParam("temp") String temp, HttpServletRequest request) throws IOException {
-//		String output = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-//		
-// 		String spoiller = new String();
-// 		
-//		request.setAttribute("spoillers", spoiller);
-//		
-//	}
-	
-//	@RequestMapping(value = "getSpoillersOption", method = RequestMethod.GET)
-//	public void showSpoillers(@RequestParam("temp") String temp, HttpServletResponse response, HttpServletRequest request)
-//			throws ServletException, IOException {
-//		Mensagem mensagem = new Mensagem();
-//		response.setContentType("text/html");
-//		request.setAttribute("spoillers", mensagem.getSpoillers(temp));
-////		response.getOutputStream().write(mensagem.getSpoillers(temp));
-//		response.getOutputStream().close();
-//	}
 	
 }
