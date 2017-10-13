@@ -1,0 +1,16 @@
+CREATE TABLE Historico( id INT NOT NULL AUTO_INCREMENT, 
+			numero_envio VARCHAR(15), 
+			numero_recebido VARCHAR(15),  
+			temp VARCHAR(3), 
+			texto VARCHAR(200), 
+			PRIMARY KEY(id));
+CREATE TABLE Spoilers (temp varchar(2),
+			texto varchar (300));
+
+INSERT INTO Spoilers (temp, texto) VALUES ("1","Sabia que o Ned morre decapitado?");
+INSERT INTO Spoilers (temp, texto) VALUES ("2","Sabia que o Tyrion vai liderar e ganhar a batalha contra o Stannis?");
+INSERT INTO Spoilers (temp, texto) VALUES ("3","Sabia que o Rob e sua mae morrem num casamento que ficou conhecido como Red Wedding?");
+INSERT INTO Spoilers (temp, texto) VALUES ("4","Sabia que a musica Shot in the Heart do Bon Jovi foi feita para Ygritte? ;)");
+INSERT INTO Spoilers (temp, texto) VALUES ("5","Sabia que o Jon Snow eh um traidor? Levou umas facadineas no coracao por isso... :(");
+INSERT INTO Spoilers (temp, texto) VALUES ("6","Sabia que... Hold the door! Hold door! Holdoor! Hodor! (morreu :) ).");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Sabia que o Jon Snow é Targaryan? Ele chama Aegon e eh filho da Lyanna (irma do Ned) com o Rhaegar (irmao da Danerys).");

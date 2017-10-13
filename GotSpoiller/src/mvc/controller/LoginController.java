@@ -23,6 +23,7 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
+import mvc.model.Mensagem;
 //import OAuth20Service;
 import mvc.model.Usuario;
 import mvc.model.UsuarioDAO;
@@ -73,6 +74,14 @@ public class LoginController {
 		response.getOutputStream().write(dao.buscaFoto(login));
 		response.getOutputStream().close();
 	}
+//	@RequestMapping(value = "getSpoillersOption", method = RequestMethod.GET)
+//	public void showSpoillers(@RequestParam("temp") String temp, HttpServletResponse response, HttpServletRequest request)
+//			throws ServletException, IOException {
+//		Mensagem mensagem = new Mensagem();
+//		response.setContentType("text/pĺain");
+//		response.getOutputStream().write(mensagem.getSpoillers(temp));
+//		response.getOutputStream().close();
+//	}
 
 	@RequestMapping(value = "fblogin")
 	public RedirectView fblogin() throws IOException, InterruptedException, ExecutionException {
@@ -96,7 +105,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "fblogin/callback")
-	public void callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
+	public String callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
 			throws IOException, InterruptedException, ExecutionException {
 
 		final String clientId = "341972912918164";
@@ -127,7 +136,8 @@ public class LoginController {
 		service.signRequest(accessToken, request2);
 		final Response response2 = service.execute(request2);
 		System.out.println(response2.getBody());
-
+		
+		return "menu";
 	}
 
 }

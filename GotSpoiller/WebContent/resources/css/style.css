@@ -2,6 +2,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+    background-image: url("http://www.uni7setembro.edu.br/semanasi/2016/wp-content/uploads/2016/10/game-of-thrones-background.jpg");
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }

@@ -20,8 +20,8 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script><%@includefile="/resources/js/materialize.min.js"%></script>
-	<script><%@includefile="/resources/js/menu.js"%></script>
-	
+		<script><%@includefile="/resources/js/menu.js"%></script>
+		
 	<nav>
 	<div class="blue-grey darken-4 nav-wrapper">
 		<a href="#" class="blue-grey-text text-lighten-4 brand-logo center">GOT Spoiller</a>
@@ -75,7 +75,7 @@
 
 
 				<div class="input-field col s12">
-					<select name="temp">
+					<select name="temp" id="temp">
 						<option value="" disabled selected>Qual é proxima temporada dele?</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -86,12 +86,33 @@
 						<option value="7">7</option>
 					</select> <label>Temporada</label>
 				</div>
-			
-			<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" type="submit"
+				
+				<input type="text" name="login" value=${usuarioLogado} id="loginLabel">
+				<div class="input-field col s12">
+					<select name="texto">
+						<option value="" disabled selected>Qual spoiller deseja mandar?</option>
+						
+						<!--  <option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>-->
+					</select> <label>Spoiller</label>
+				</div> 
+				<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" type="submit"
 				name="action">Acabe com sua amizade :)<i class="material-icons right">send</i>
 			</button>
 			</form>
 			<div class="row"></div>
+			
+		</div>
+		
+		<div class="col s2 m2 l2" id="history">
+			<div class="center blue-grey darken-1 card-panel teal">
+				<span class="white-text">Histórico de mensagens</span>
+			</div>
 		</div>
 	</div>
 	
