@@ -44,10 +44,29 @@ $(document).ready(function() {
     		success: function (result) {
             	$result = JSON.parse(result)
             	console.log($result)
+            	$('#spoilers').empty()
+//            	$("#spoilersDiv").load(location.href + " #spoilersDiv");
+            	for(i = 0; i<Object.values($result.spoilers).length; i++){
+                	$("#spoilers").append('<option value='+ i + '>' + $result.spoilers[0].texto + '</option>')        
+                	$('select').material_select();
+            	}
+            	
+
+//            	$('#spoilers').append($('<option>'),{
+//            		value: 0,
+//            		text: $result.spoilers[0].texto
+//            	})ss
+
+
+//            	$("#spoilersDiv").hide().fadeIn('fast');
+            	
+            	
+            	
 //            	$('#mySelect').append($('<option>', {
 //            	    value: 1,
 //            	    text: 'My option'
 //            	}));
+            	console.log("add")
             },
             error: function (result) {
             	console.log("Nao foi");
