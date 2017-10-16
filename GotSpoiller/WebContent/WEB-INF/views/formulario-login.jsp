@@ -84,7 +84,11 @@
 									</div>
 								</div>
 								<div class="simform__actions">
-									Foto de perfil: <input type="file" name="foto" /> <br /> <input
+									Foto de perfil: <input type="file" name="foto" />
+									<br /> 
+									Ou link para foto:  <input type="text" />
+									<br /> 
+									<input
 										class="sumbit" name="commit" type="submit"
 										value="Create Account" /> <span
 										class="simform__actions-sidetext">By creating an

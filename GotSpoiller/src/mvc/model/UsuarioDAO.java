@@ -36,8 +36,8 @@ public class UsuarioDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, usuario.getLogin());
 			stmt.setString(2, usuario.getSenha());
-			stmt.setString(3, "false");
 			stmt.setBinaryStream(3, filePart.getInputStream());
+			stmt.setString(4, "false");
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {

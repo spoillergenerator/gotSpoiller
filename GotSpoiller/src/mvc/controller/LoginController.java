@@ -34,10 +34,10 @@ public class LoginController {
 	private static final String PROTECTED_RESOURCE_URL = "https://graph.facebook.com/v2.8/me";
 	private static final String PICTURE_URL = "https://graph.facebook.com/v2.8/me?fields=picture";
 
-	// @RequestMapping("/")
-	// public String inicial() {
-	// return "formulario-login";
-	// }
+//	 @RequestMapping("/")
+//	 public String inicial() {
+//	 return "loginForm";
+//	 }
 
 	@RequestMapping(value = "efetuaRegistro", method = RequestMethod.POST)
 	public String upload(Usuario usuario) throws IOException {
