@@ -1,11 +1,14 @@
 $(document).ready(function() {
     $('select').material_select();
+    $('#loader').hide();
     
 //    console.log("${usuarioLogado}");
-    
+//    var fd = new FormData()
+//    fd.append('user',"${usuarioLogado}")
+//    
 //    fetch("http://localhost:8080/GotSpoiller/getHistory", {
-//    	method: 'post',
-//    	body : JSON.stringify({"user": "${usuarioLogado}"})
+//    	method: 'POST',
+//    	body : fd
 //    }).then(function(response){
 //    	console.log("cheguei")
 //    	response.json().then(function(data) {
@@ -37,6 +40,7 @@ $(document).ready(function() {
     });
     
     $('#temp').change( function() {
+    	console.log("${usuarioLogado}")
     	$.ajax({
     		type: "POST",
     		url: "getSpoilers",
@@ -61,5 +65,44 @@ $(document).ready(function() {
     		
     		
     	})
-    })  
+    })
+    $("#sendButton").click((e) => {
+
+    	$name = $("#friendName").val()
+    	$phone = $("#friendPhone").val()
+    	$temp = $("#temp").val()
+    	$spoiler = $("#spoilers").val()
+    	$json = {"name": $name, 
+    			 "phone": $phone,
+    			 "temp": $temp,
+    			 "spoiler": $spoiler,
+    			 "login": "${usuarioLogado}"}
+    	if($phone != ""){
+    		if($temp != null){
+    			$('#loader').show();
+    			$.ajax({
+    	    		type: "POST",
+    	    		url: "sendMessage",
+    	    		data: JSON.stringify($json),
+    	    		success: function (result) {
+    	            	$result = JSON.parse(result)
+    	            	console.log($result)
+    	            	alert("Mensagem enviada com sucesso!")	
+    	            	$('#loader').hide();
+    	            	
+    	            },
+    	            error: function (result) {
+    	            	console.log("Nao foi");
+    	                // do something.
+    	            }	
+    	    	})
+    		}
+    		else{
+    			alert("Selecione uma temporada!")
+    		}
+    	}
+    	else{
+    		alert("O telefone não pode ser vazio!")
+    	}
+    })
  });

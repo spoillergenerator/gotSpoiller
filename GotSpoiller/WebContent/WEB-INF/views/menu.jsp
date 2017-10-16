@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<div class="col s8 m8 l8 blue-grey darken-1">
-			<form action="mandar">
+			
 		<span class="blue-grey-text text-lighten-5"><h4>Seja bem vindo ao Got Spoiller Generator. Aqui você pode acabar com a vida de seus amigos com apenas um clique. Basta dizer até qual temporada
 			 de Game of Thrones ele viu, que enviaremos um spoiller das tempordas seguintes. Use sem moderação.</h4></span>
 				<div class="row">
@@ -62,13 +62,13 @@
 						<div class="row">
 							<div class="input-field col s6">
 								<i class="material-icons prefix">account_circle</i> <input
-									id="icon_prefix" name="nome" type="text" class="validate"> <label
-									for="icon_prefix">Nome do amiguinho que vai se fuder</label>
+									id="friendName" name="nome" type="text" class="validate"> <label
+									for="icon_prefix">Nome do amigo</label>
 							</div>
 							<div class="input-field col s6">
 								<i class="material-icons prefix">phone</i> <input
-									id="icon_telephone" name="numero" type="tel" class="validate"> <label
-									for="icon_telephone">numero dele</label>
+									id="friendPhone" name="numero" type="tel" class="validate"> <label
+									for="icon_telephone">Número dele</label>
 							</div>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 
 				<div class="input-field col s12">
 					<select name="temp" id="temp">
-						<option value="" disabled selected>Qual é proxima temporada dele?</option>
+						<option value="" disabled selected>Qual é a proxima temporada dele? (Ex: Se eles estiver na 2ª, enviaremos um Spoiler da 3ª temporada, portanto, selecione 3ª.)</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -86,7 +86,7 @@
 						<option value="5">5</option>
 						<option value="6">6</option>
 						<option value="7">7</option>
-					</select> <label>Temporada</label>
+					</select> <label>Temporada</label>	
 				</div>
 				
 				<input type="text" name="login" value=${usuarioLogado} id="loginLabel">
@@ -96,11 +96,29 @@
 						<option value="" disabled selected>Qual spoiller deseja mandar?</option>
 					</select> <label>Spoiller</label>
 				</div>
-				 
-				<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" type="submit"
-				name="action">Acabe com sua amizade :)<i class="material-icons right">send</i>
+			
+				<div class="col s1 m6 l6">
+				</div>
+				
+				<div class="col s2 m6 l6">
+				<div id = "loader" class="preloader-wrapper big active">
+					<div class="spinner-layer spinner-blue-only">
+						<div class="circle-clipper left">
+							<div class="circle"></div>
+						</div>
+						<div class="gap-patch">
+							<div class="circle"></div>
+						</div>
+						<div class="circle-clipper right">
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button class="right blue-grey darken-4 blue-grey-text text-lighten-4 btn waves-effect waves-light" id="sendButton" >Acabe com sua amizade :)<i class="material-icons right" >send</i>
 			</button>
-			</form>
+			
 			<div class="row"></div>
 			
 		</div>

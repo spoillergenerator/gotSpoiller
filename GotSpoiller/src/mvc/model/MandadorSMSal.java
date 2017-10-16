@@ -22,10 +22,11 @@ public class MandadorSMSal {
 		dao.adicionaSMS(mensagem);
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
+		System.out.println("IOException do mandador");
 		e.printStackTrace();
 	}
-    System.out.println(message.getSid());
-    System.out.println(" "+mensagem.getNome()+", toma aqui seu spoiler! ("+mensagem.getNumero_recebido()+")");
+//    System.out.println(message.getSid());
+//    System.out.println(" "+mensagem.getNome()+", toma aqui seu spoiler! ("+mensagem.getNumero_recebido()+")");
   }
 
 }

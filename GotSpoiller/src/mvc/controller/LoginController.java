@@ -74,14 +74,6 @@ public class LoginController {
 		response.getOutputStream().write(dao.buscaFoto(login));
 		response.getOutputStream().close();
 	}
-//	@RequestMapping(value = "getSpoillersOption", method = RequestMethod.GET)
-//	public void showSpoillers(@RequestParam("temp") String temp, HttpServletResponse response, HttpServletRequest request)
-//			throws ServletException, IOException {
-//		Mensagem mensagem = new Mensagem();
-//		response.setContentType("text/pĺain");
-//		response.getOutputStream().write(mensagem.getSpoillers(temp));
-//		response.getOutputStream().close();
-//	}
 
 	@RequestMapping(value = "fblogin")
 	public RedirectView fblogin() throws IOException, InterruptedException, ExecutionException {
@@ -101,13 +93,14 @@ public class LoginController {
 		final String authorizationUrl = service.getAuthorizationUrl();
 		System.out.println("Got the Authorization URL!");
 		System.out.println("Now go and authorize ScribeJava here:");
+		System.out.println(authorizationUrl);
 		return new RedirectView(authorizationUrl);
 	}
 
 	@RequestMapping(value = "fblogin/callback")
-	public String callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
+	public void callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
 			throws IOException, InterruptedException, ExecutionException {
-
+		System.out.println("Entrou");
 		final String clientId = "341972912918164";
 		final String clientSecret = "90e3d5af558fc29fbdf07865a6492229";
 		final String secretState = "secret" + new Random().nextInt(999_999);
@@ -136,8 +129,7 @@ public class LoginController {
 		service.signRequest(accessToken, request2);
 		final Response response2 = service.execute(request2);
 		System.out.println(response2.getBody());
-		
-		return "menu";
 	}
+
 
 }
