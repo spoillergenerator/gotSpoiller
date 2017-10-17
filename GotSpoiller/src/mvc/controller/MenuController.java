@@ -65,7 +65,7 @@ public class MenuController {
 			mensagem.setTexto(spoilerJson.toString());
 			mensagem.setUserName(loginJson.toString());
 			
-//			MandadorSMSal.send(mensagem);
+			MandadorSMSal.send(mensagem);
 			
 			responseJson.put("status", "sent");
 			response.setCharacterEncoding("UTF-8");

@@ -89,6 +89,16 @@ $(document).ready(function() {
     	            	console.log($result)
     	            	alert("Mensagem enviada com sucesso!")	
     	            	$('#loader').hide();
+    	            	$( "#history" ).append( "<ul class='collection'> " +
+    							"<li class='blue-grey darken-1 collection-item avatar'>" +
+    							"<span class='title'>" + "Para: " + $name + "</span>" +
+    							"<p> " +	
+    							"Tel: " + $phone + "<br>" + "Temp: " + $temp + "<br>" +
+    							"</p></li>" +
+    							"</ul>"
+    							
+    	        		);
+    	            	
     	            	
     	            },
     	            error: function (result) {
