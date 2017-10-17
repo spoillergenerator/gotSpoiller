@@ -33,6 +33,7 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
+import mvc.model.FacebookUserDAO;
 import mvc.model.Mensagem;
 //import OAuth20Service;
 import mvc.model.Usuario;
@@ -80,6 +81,27 @@ public class LoginController {
 
 	@RequestMapping(value = "getImage", method = RequestMethod.GET)
 	public void showImage(@RequestParam("login") String login, HttpServletResponse response, HttpServletRequest request)
+			throws ServletException, IOException {
+		UsuarioDAO dao = new UsuarioDAO();
+		boolean isFacebook = dao.isFacebook(login);
+		System.out.println("isFacebook: " + dao.isFacebook(login));
+		if(isFacebook){
+
+			byte[] img = ImageConverter.getBytesFromUrl(dao.buscaFotofacebook(login));
+			
+			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+			response.getOutputStream().write(img);
+			response.getOutputStream().close();
+			
+		}
+		else{
+			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+			response.getOutputStream().write(dao.buscaFoto(login));
+			response.getOutputStream().close();
+		}
+	}
+	@RequestMapping(value = "/fblogin/getImage", method = RequestMethod.GET)
+	public void showImageFacebook(@RequestParam("login") String login, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
 		UsuarioDAO dao = new UsuarioDAO();
 		boolean isFacebook = dao.isFacebook(login);
@@ -163,12 +185,16 @@ public class LoginController {
 			
 			session.setAttribute("usuarioLogado", nameJson.toString());
 			
-			UsuarioDAO dao = new UsuarioDAO();
+			FacebookUserDAO fDAO = new FacebookUserDAO();
 			
 			Usuario usuario = new Usuario();
 			usuario.setLogin(nameJson.toString());
+			usuario.setIsFacebook("true");
+			usuario.setLink(url.toString());
 			
-			return "menu";
+			if(!fDAO.existeUsuarioFacebook(usuario)){
+				fDAO.adicionaFacebook(usuario);
+			}
 			
 			
 		} catch (JSONException e) {
@@ -184,7 +210,7 @@ public class LoginController {
 //		service.signRequest(accessToken, request2);
 //		final Response response2 = service.execute(request2);
 //		System.out.println(response2.getBody());
-		return "redirect:loginForm";
+		return "menu";
 		
 		
 	}
