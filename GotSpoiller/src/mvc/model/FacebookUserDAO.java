@@ -61,22 +61,22 @@ public class FacebookUserDAO {
 		}
 		return existe;
 	}
-	public String buscaFotofacebook(String login){
-		String link = null;
-		try {
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM usuario WHERE login=? ");
-			stmt.setString(1, login);
-			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
-				link = rs.getString("link");
-			}
-			rs.close();
-			stmt.close();
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
-		return link;
-	}
+//	public String buscaFotofacebook(String login){
+//		String link = null;
+//		try {
+//			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM usuario WHERE login=? ");
+//			stmt.setString(1, login);
+//			ResultSet rs = stmt.executeQuery();
+//			if (rs.next()) {
+//				link = rs.getString("link");
+//			}
+//			rs.close();
+//			stmt.close();
+//		} catch (SQLException e) {
+//			System.out.println(e);
+//		}
+//		return link;
+//	}
 	
 	
 }

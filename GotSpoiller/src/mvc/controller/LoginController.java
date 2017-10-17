@@ -71,7 +71,10 @@ public class LoginController {
 		return "redirect:loginForm";
 	}
 	
-	
+	@RequestMapping("/efetuaLoginFacebook")
+	public String efetuaLoginFacebook() {
+		return "menu";
+	}
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
@@ -81,27 +84,6 @@ public class LoginController {
 
 	@RequestMapping(value = "getImage", method = RequestMethod.GET)
 	public void showImage(@RequestParam("login") String login, HttpServletResponse response, HttpServletRequest request)
-			throws ServletException, IOException {
-		UsuarioDAO dao = new UsuarioDAO();
-		boolean isFacebook = dao.isFacebook(login);
-		System.out.println("isFacebook: " + dao.isFacebook(login));
-		if(isFacebook){
-
-			byte[] img = ImageConverter.getBytesFromUrl(dao.buscaFotofacebook(login));
-			
-			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-			response.getOutputStream().write(img);
-			response.getOutputStream().close();
-			
-		}
-		else{
-			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-			response.getOutputStream().write(dao.buscaFoto(login));
-			response.getOutputStream().close();
-		}
-	}
-	@RequestMapping(value = "/fblogin/getImage", method = RequestMethod.GET)
-	public void showImageFacebook(@RequestParam("login") String login, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
 		UsuarioDAO dao = new UsuarioDAO();
 		boolean isFacebook = dao.isFacebook(login);
@@ -210,7 +192,7 @@ public class LoginController {
 //		service.signRequest(accessToken, request2);
 //		final Response response2 = service.execute(request2);
 //		System.out.println(response2.getBody());
-		return "menu";
+		return "redirect:http://localhost:8080/efetuaLoginFacebook";
 		
 		
 	}
