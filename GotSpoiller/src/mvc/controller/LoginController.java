@@ -146,7 +146,6 @@ public class LoginController {
 		service.signRequest(accessToken, request);
 		final Response response = service.execute(request);
 		System.out.println("Got it! Lets see what we found...");
-		System.out.println("Id: ");
 		System.out.println(response.getBody());
 		JSONObject json;
 		try {

@@ -14,6 +14,32 @@ INSERT INTO Spoilers (temp, texto) VALUES ("4","Sabia que a musica Shot in the H
 INSERT INTO Spoilers (temp, texto) VALUES ("5","Sabia que o Jon Snow eh um traidor? Levou umas facadineas no coracao por isso... :(");
 INSERT INTO Spoilers (temp, texto) VALUES ("6","Sabia que... Hold the door! Hold door! Holdoor! Hodor! (morreu :) ).");
 INSERT INTO Spoilers (temp, texto) VALUES ("7","Sabia que o Jon Snow é Targaryan? Ele chama Aegon e eh filho da Lyanna (irma do Ned) com o Rhaegar (irmao da Danerys).");
+INSERT INTO Spoilers (temp, texto) VALUES ("1","Sabia que o Ned morre decapitado?");
+INSERT INTO Spoilers (temp, texto) VALUES ("1","Sabia que no último episódio, todos os 3 ovos da Daenerys chocam e geram 3 lindos dragões ?");
+INSERT INTO Spoilers (temp, texto) VALUES ("1","Jaime Lannister beheads Queen Cersei");
+INSERT INTO Spoilers (temp, texto) VALUES ("1","Viserys Targaryen dies");
+INSERT INTO Spoilers (temp, texto) VALUES ("2","The White Walkers will appear!!");
+INSERT INTO Spoilers (temp, texto) VALUES ("2","Heads will roll" -Pree");
+INSERT INTO Spoilers (temp, texto) VALUES ("2","Tyrion save us!!");
+INSERT INTO Spoilers (temp, texto) VALUES ("3","Hide and seek with Theon Greyjoy");
+INSERT INTO Spoilers (temp, texto) VALUES ("3","Jaime, why did you kill Mad King?");
+INSERT INTO Spoilers (temp, texto) VALUES ("4","Joffrey dies");
+INSERT INTO Spoilers (temp, texto) VALUES ("4","Arya meets Brienne");
+INSERT INTO Spoilers (temp, texto) VALUES ("4","Ygritte dies");
+INSERT INTO Spoilers (temp, texto) VALUES ("4","Tywin Lannister dies");
+INSERT INTO Spoilers (temp, texto) VALUES ("5","The return of the Queen Of Thorns");
+INSERT INTO Spoilers (temp, texto) VALUES ("5","Sansa And Theon Escape");
+INSERT INTO Spoilers (temp, texto) VALUES ("5","Bloody Arya");
+INSERT INTO Spoilers (temp, texto) VALUES ("5","Daenerys rides the dragon");
+INSERT INTO Spoilers (temp, texto) VALUES ("6","Jon Snow didn't die");
+INSERT INTO Spoilers (temp, texto) VALUES ("6","Jon Snow's parents");
+INSERT INTO Spoilers (temp, texto) VALUES ("6","Battle of the Bastards");
+INSERT INTO Spoilers (temp, texto) VALUES ("6","Jon and Sansa together again, aww");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Arya kills the Freys");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Daenerys and Jon Snow  meet");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Sam leaves the Citadel");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Viserion dies… and is resurrected");
+INSERT INTO Spoilers (temp, texto) VALUES ("7","Littlefinger dies");
 
 https://graph.facebook.com/1568587209846454/picture?type=large
 
