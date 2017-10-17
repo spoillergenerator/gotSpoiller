@@ -1,3 +1,9 @@
+CREATE TABLE usuario   (login varchar(255),
+			senha varchar(255),
+			foto mediumblob,
+			isFacebook varchar(5),
+			link varchar(100));
+
 CREATE TABLE Historico( id INT NOT NULL AUTO_INCREMENT, 
 			numero_envio VARCHAR(15), 
 			numero_recebido VARCHAR(15),  
