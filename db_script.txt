@@ -14,3 +14,11 @@ INSERT INTO Spoilers (temp, texto) VALUES ("4","Sabia que a musica Shot in the H
 INSERT INTO Spoilers (temp, texto) VALUES ("5","Sabia que o Jon Snow eh um traidor? Levou umas facadineas no coracao por isso... :(");
 INSERT INTO Spoilers (temp, texto) VALUES ("6","Sabia que... Hold the door! Hold door! Holdoor! Hodor! (morreu :) ).");
 INSERT INTO Spoilers (temp, texto) VALUES ("7","Sabia que o Jon Snow é Targaryan? Ele chama Aegon e eh filho da Lyanna (irma do Ned) com o Rhaegar (irmao da Danerys).");
+
+https://graph.facebook.com/1568587209846454/picture?type=large
+
+
+UPDATE usuario
+SET isFacebook = false
+WHERE login="fredao";
+

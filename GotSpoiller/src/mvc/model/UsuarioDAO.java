@@ -112,6 +112,46 @@ public class UsuarioDAO {
 		return imgData;
 	}
 	
+	public String buscaFotofacebook(String login){
+		String link = null;
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM usuario WHERE login=? ");
+			stmt.setString(1, login);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				link = rs.getString("link");
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return link;
+	}
+	
+	public boolean isFacebook(String login){
+		boolean isFacebook = false;
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT isFacebook FROM usuario WHERE login=? ");
+			stmt.setString(1, login);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				String sqlValue = rs.getString("isFacebook");
+				System.out.println("sqlValue: " + sqlValue);
+				if (sqlValue.equals("true")){
+					System.out.println("Facebook Login");
+					isFacebook = true;
+					return isFacebook;
+				}
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return isFacebook;
+	}
+	
 	public List<Mensagem> getHistory(String usuario){
 		
 		List<Mensagem> history = new ArrayList<Mensagem>();

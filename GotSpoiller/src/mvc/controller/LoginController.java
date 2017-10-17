@@ -1,14 +1,24 @@
 package mvc.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -59,6 +69,8 @@ public class LoginController {
 		}
 		return "redirect:loginForm";
 	}
+	
+	
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
@@ -70,9 +82,22 @@ public class LoginController {
 	public void showImage(@RequestParam("login") String login, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
 		UsuarioDAO dao = new UsuarioDAO();
-		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-		response.getOutputStream().write(dao.buscaFoto(login));
-		response.getOutputStream().close();
+		boolean isFacebook = dao.isFacebook(login);
+		System.out.println("isFacebook: " + dao.isFacebook(login));
+		if(isFacebook){
+
+			byte[] img = ImageConverter.getBytesFromUrl(dao.buscaFotofacebook(login));
+			
+			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+			response.getOutputStream().write(img);
+			response.getOutputStream().close();
+			
+		}
+		else{
+			response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+			response.getOutputStream().write(dao.buscaFoto(login));
+			response.getOutputStream().close();
+		}
 	}
 
 	@RequestMapping(value = "fblogin")
@@ -98,7 +123,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "fblogin/callback")
-	public void callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
+	public String callback(@RequestParam("code") String code, @RequestParam("state") String state, HttpSession session)
 			throws IOException, InterruptedException, ExecutionException {
 		System.out.println("Entrou");
 		final String clientId = "341972912918164";
@@ -121,14 +146,48 @@ public class LoginController {
 		service.signRequest(accessToken, request);
 		final Response response = service.execute(request);
 		System.out.println("Got it! Lets see what we found...");
-		System.out.println();
+		System.out.println("Id: ");
 		System.out.println(response.getBody());
+		JSONObject json;
+		try {
+			json = new JSONObject(response.getBody());
+			Object idJson = json.get("id");
+			Object nameJson = json.get("name");
+			System.out.println("Id: " + idJson.toString());
+			System.out.println("name: " + nameJson.toString());
+			session.setAttribute("login", nameJson.toString());
+			System.out.println("Convertendo imagem... ");
+			
+			URL url = new URL("https://graph.facebook.com/" + idJson.toString() + "/picture?type=large");
+			
+			System.out.println(url.toString());
+			
+			session.setAttribute("usuarioLogado", nameJson.toString());
+			
+			UsuarioDAO dao = new UsuarioDAO();
+			
+			Usuario usuario = new Usuario();
+			usuario.setLogin(nameJson.toString());
+			
+			return "menu";
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		 
 		System.out.println();
-		System.out.println("Profile Picture link:");
-		final OAuthRequest request2 = new OAuthRequest(Verb.GET, PICTURE_URL);
-		service.signRequest(accessToken, request2);
-		final Response response2 = service.execute(request2);
-		System.out.println(response2.getBody());
+//		System.out.println("Profile Picture link:");
+//		final OAuthRequest request2 = new OAuthRequest(Verb.GET, PICTURE_URL);
+//		service.signRequest(accessToken, request2);
+//		final Response response2 = service.execute(request2);
+//		System.out.println(response2.getBody());
+		return "redirect:loginForm";
+		
+		
 	}
 
 
