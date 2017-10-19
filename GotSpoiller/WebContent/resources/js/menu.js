@@ -26,7 +26,7 @@ $(document).ready(function() {
 						"<li class='blue-grey darken-1 collection-item avatar'>" +
 						"<span class='title'>" + "Para: " + $result.history[i].nome + "</span>" +
 						"<p> " +	
-						"Tel: " + $result.history[i].numero_recebido + "<br>" + "Temp: " + $result.history[i].temp + "<br>" +
+						"Tel: " + $result.history[i].numero_recebido + "<br>" + "Temporada: " + $result.history[i].temp + "<br>" +
 						"</p></li>" +
 						"</ul>"
 						
@@ -93,7 +93,7 @@ $(document).ready(function() {
     							"<li class='blue-grey darken-1 collection-item avatar'>" +
     							"<span class='title'>" + "Para: " + $name + "</span>" +
     							"<p> " +	
-    							"Tel: " + $phone + "<br>" + "Temp: " + $temp + "<br>" +
+    							"Tel: " + $phone + "<br>" + "Temporada: " + $temp + "<br>" +
     							"</p></li>" +
     							"</ul>"
     							

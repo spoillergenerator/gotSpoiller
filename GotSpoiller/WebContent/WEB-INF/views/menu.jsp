@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<div class="main">
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript"
@@ -23,21 +24,24 @@
 	
 	<script><%@includefile="/resources/js/materialize.min.js"%></script>
 	<script><%@includefile="/resources/js/menu.js"%></script>
-		
 	<nav>
 	<div class="blue-grey darken-4 nav-wrapper">
-		<a href="#" class="blue-grey-text text-lighten-4 brand-logo center">GOT Spoiller</a>
+		<a href="" class="blue-grey-text text-lighten-4 brand-logo center">GOT Spoiler</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="logout">Log Out</a></li>
 		</ul>
 	</div>
 	</nav>
-	<div class="row"></div>
+	<div class="row">
+		<div class="col s2 m2 l2" id="">
+			
+		</div>
+	</div>
 	<div class="row">
 		<div class="col s2 m2 l2">
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
-					<img class="activator" src="getImage?login=${usuarioLogado}" />
+				<img class="circle responsive-img" src="getImage?login=${usuarioLogado}" />
 				</div>
 				<div class="blue-grey darken-1 card-content">
 					<span class="card-title activator blue-grey-text text-lighten-5">${usuarioLogado}<i class="material-icons right">more_vert</i>
@@ -48,15 +52,17 @@
 				</div>
 				<div class="card-reveal">
 					<span class="card-title grey-text text-darken-4">Bem vindo, ${usuarioLogado}<i class="material-icons right">close</i></span>
-					<p>Here is some more information about this product that is
-						only revealed once clicked on.</p>
+					<p><img class="" src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfKArBVHkBvJwXs1M3EMoAJtlSAlhfpv9fsy" /></p>
 				</div>
 			</div>
 		</div>
 		<div class="col s8 m8 l8 blue-grey darken-1">
 			
-		<span class="blue-grey-text text-lighten-5"><h4>Seja bem vindo ao Got Spoiller Generator. Aqui você pode acabar com a vida de seus amigos com apenas um clique. Basta dizer até qual temporada
-			 de Game of Thrones ele viu, que enviaremos um spoiller das tempordas seguintes. Use sem moderação.</h4></span>
+		<span class="blue-grey-text text-lighten-5" id = "description"><h4>Seja bem vindo ao Game of Thrones Spoiler Generator. Aqui você pode acabar com a vida de seus amigos com apenas um clique. Basta dizer até qual temporada
+			 de Game of Thrones ele viu, que enviaremos um spoiller das tempordas seguintes. Use sem moderação.</h4>
+			 <img class="logo"
+							src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfKArBVHkBvJwXs1M3EMoAJtlSAlhfpv9fsy" />
+			 </span>
 				<div class="row">
 					<div class="col s12">
 						<div class="row">
@@ -78,7 +84,7 @@
 
 				<div class="input-field col s12">
 					<select name="temp" id="temp">
-						<option value="" disabled selected>Qual é a proxima temporada dele? (Ex: Se eles estiver na 2ª, enviaremos um Spoiler da 3ª temporada, portanto, selecione 3ª.)</option>
+						<option value="" disabled selected>Qual é a temporada que deseja mandar o spoiler? 	</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -131,6 +137,6 @@
 	</div>
 	
 	
-	
+</div>
 </body>
 </html>

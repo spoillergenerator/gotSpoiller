@@ -16,10 +16,13 @@
 
 <link rel='stylesheet prefetch'
 	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<style media="screen,projection"><%@includefile="/resources/css/materialize.min.css"%></style>
 
 
 <script
 	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	
+<script><%@includefile="/resources/js/materialize.min.js"%></script>
 
 <style><%@includefile="/resources/css/style.css"%></style>
 <script><%@includefile="/resources/js/index.js"%></script>
@@ -37,6 +40,14 @@
 
 
 <body>
+	<div class = "row">
+	</div>
+	<div class="row">
+		<div class="col s2 m2 l2">
+		</div>
+		<img class="logo_img"
+			src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfKArBVHkBvJwXs1M3EMoAJtlSAlhfpq8...sz" />
+	</div>
 	<div class="logmod">
 		<div class="logmod__wrapper">
 			<span class="logmod__close">Close</span>
@@ -74,19 +85,17 @@
 									<div class="input string optional">
 										<label class="string optional" for="user-pw">Password
 											*</label> <input class="string optional" maxlength="255" id="user-pw"
-											placeholder="Password" type="text" size="50" name="senha" />
+											placeholder="Password" type="password" size="50" name="senha" />
 									</div>
 									<div class="input string optional">
 										<label class="string optional" for="user-pw-repeat">Repeat
 											password *</label> <input class="string optional" maxlength="255"
-											id="user-pw-repeat" placeholder="Repeat password" type="text"
+											type="password" id="user-pw-repeat" placeholder="Repeat password" type="text"
 											size="50" />
 									</div>
 								</div>
 								<div class="simform__actions">
 									Foto de perfil: <input type="file" name="foto" />
-									<br /> 
-									Ou link para foto:  <input type="text" />
 									<br /> 
 									<input
 										class="sumbit" name="commit" type="submit"

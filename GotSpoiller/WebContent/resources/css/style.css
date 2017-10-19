@@ -10,6 +10,13 @@ body {
   box-sizing: inherit;
 }
 
+.logo_img{
+	margin-top:10%;
+}
+.logo{
+	margin-left:16%;
+}
+
 .logmod {
   display: block;
   position: fixed;
